@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie-edge">
+        <title>Weapon Detector</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    </head>
+    <body>
+        <header>
+            
+            <div class="search-container">
+                <a href="#" class="home-icon">
+                    <img src="icons/home-solid-24.png" alt="Home">
+                </a>
+                <div class="search-wrapper">
+                    <div class="search-icon-wrapper">
+                        <img src="icons/search-regular-24.png" alt="Search" class="search-icon">
+                    </div>
+                    <input type="text" class="search-bar" placeholder="Search Cameras...">
+                </div>
+            </div>
+
+            <nav class="navigation">
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <button class="btnLogin-popup">Login</button>
+                <img src="images\user-circle-solid-24.png" id="user-picture" alt="User Picture" style="display: none; width: 40px; height: 40px; border-radius: 50%;">
+            </nav>
+        </header>
+        <section class="landing">
+    <div class="landing-container">
+        <div class="landing-image">
+            <img src="images/weapon detection.jpeg" alt="Weapon Detection">
+        </div>
+        <div class="landing-content">
+            <h1>Advanced Weapon Detection System</h1>
+            <p>Machine Learning and AI technology provides real-time weapon detection to enhance safety and security in various environments. Using long-short-term-memory machine learning algorithms, we offer precise and reliable threat identification.</p>
+            <div class="landing-features">
+                <div class="feature">
+                    <img src="images/shield-quarter-regular-24.png" class="shield-icon">
+                    <span>Advanced AI Detection</span>
+                </div>
+                <div class="feature">
+                    <img src="images/line-chart-regular-24.png" class="chart-icon">
+                    <span>Real-Time Monitoring</span>
+                </div>
+                <div class="feature">
+                    <img src="images/lock-alt-regular-24.png"  class="lock-icon">
+                    <span>High Accuracy</span>
+                </div>
+            </div>
+            <button class="start-detecting-btn">Start Detecting</button>
+        </div>
+    </div>
+</section>
+    <div class="popup-overlay"></div>
+    <div class="login-popup">
+        <span class="close-popup">&times;</span>
+        <h2>Login</h2>
+        <form id="login-form">
+            <input id="loginUsername" type="text" placeholder="Username" required>
+            <input id="loginPassword" type="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p class="is-signed">Don't have an account? <a href="#" class="signup-link">Sign Up</a></p>
+    </div>
+    <div class="reg-popup-overlay"></div>
+    <div class="registration-popup">
+       <span class="close-registration-popup">&times;</span> 
+        <h2>Create Account</h2>
+        <form id="registration-form">
+            <input id="regUsername" type="text" placeholder="Create Username" required>
+            <input id="regEmail" type="text" placeholder="Enter Email" required>
+            <input id="regPassword" type="password" placeholder="Create Password" required>
+            <input id="regConfirmPassword" type="password" placeholder="Confirm Password" required>
+            <button id="createAccount"type="submit">Create Account</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+    </body>
+</html>

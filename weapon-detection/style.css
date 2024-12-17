@@ -1,0 +1,463 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.logo {
+    font-size: 2em;
+    color: #fff;
+    user-select: none;
+}
+
+
+.home-icon {
+    color: #fff;
+    font-size: 1.5em;
+    margin-right: 15px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.home-icon i {
+    color: #fff;
+}
+
+.search-container {
+    display: flex;          
+    align-items: center;    
+    flex-grow: 1;           
+    max-width: 500px;       
+    margin: 0 20px;         
+}
+
+
+
+.search-icon-wrapper {
+    display: flex;          
+    align-items: center;    
+    justify-content: center;
+    padding: 10px;          
+    cursor: pointer;        
+}
+
+.search-icon {
+    width: 20px;            
+    height: 20px;           
+    filter: invert(0.7);    
+    transition: filter 0.3s ease;  
+}
+
+.search-icon-wrapper:hover .search-icon {
+    filter: invert(1);      
+}
+
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    background: #282828;
+    border-radius: 20px;
+    border: 2px solid transparent;  
+    transition: border-color 0.3s ease;  
+}
+
+.search-bar:focus-within ~ .search-wrapper,
+.search-wrapper:focus-within {
+    border-color: white;  
+}
+
+.search-bar {
+    flex-grow: 1;
+    background: #282828;
+    color: white;
+    padding: 10px;
+    border: none;
+    outline: none;  
+    border-radius: 0 20px 20px 0;
+    font-size: 1em;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+}
+
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navigation .btnLogin-popup {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+}
+
+.navigation .btnLogin-popup:hover {
+    background: #fff;
+    color: #162938;
+}
+
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navigation a:hover::after {
+    transform: scaleX(1);
+}
+
+.navigation a img {
+
+    filter: invert(1);  
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;  
+    height: 40px; 
+    border-radius: 50%;  
+    background-color: rgba(255, 255, 255, 0.1);  
+    transition: background-color 0.3s ease;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    max-width: 500px;
+    margin: 0 20px;
+}
+
+.home-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-right: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.home-icon:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.home-icon img {
+    width: 30px;
+    height: 30px;
+    filter: invert(1);
+}
+
+.landing {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 10%;
+    background-color: #111;
+    color: #fff;
+}
+
+.landing-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.landing-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing-image img {
+    width: 500px;
+    height: 500px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+}
+
+.landing-image img:hover {
+    transform: scale(1.05);
+}
+
+.landing-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.landing-content h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.landing-content p {
+    font-size: 1em;
+    color: #aaa;
+    line-height: 1.6;
+}
+
+.landing-features {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #aaa;
+}
+
+.feature i {
+    font-size: 1.2em;
+    color: teal;
+}
+
+.start-detecting-btn {
+    width: 200px;
+    padding: 15px;
+    background-color: teal;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.start-detecting-btn:hover {
+    background-color: #009999;
+    transform: translateY(-5px);
+}
+
+.chart-icon {
+    filter: invert(1);
+}
+
+.shield-icon {
+    filter: invert(1);
+}
+
+.lock-icon {
+    filter: invert(1);
+}
+
+
+.login-popup {
+    display: none; 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 400px;
+}
+
+.login-popup.active {
+    display: block; 
+}
+
+.popup-overlay {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.popup-overlay.active {
+    display: block; 
+}
+
+.login-popup h2 {
+    margin: 0 0 10px;
+    text-align: center;
+}
+
+.login-popup input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-popup button {
+    width: 100%;
+    padding: 10px;
+    background-color: lawngreen;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.login-popup button:hover {
+    background-color: green;
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #333;
+}
+
+.close-popup:hover {
+    color: red;
+}
+
+
+.registration-popup {
+    display: none; 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 40px 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 400px;
+}
+
+.registration-popup.active {
+    display: block; 
+}
+
+.reg-popup-overlay {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.reg-popup-overlay.active {
+    display: block; 
+}
+
+.registration-popup h2 {
+    margin: 0 0 10px;
+    text-align: center;
+}
+
+.registration-popup input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.registration-popup button {
+    width: 100%;
+    padding: 10px;
+    background-color: lawngreen;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.registration-popup button:hover {
+    background-color: green;
+}
+
+.close-registration-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #333;
+}
+
+.close-registration-popup:hover {
+    color: red;
+}
+
+.is-signed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
