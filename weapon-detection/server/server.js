@@ -1,12 +1,14 @@
 // Import dependencies
 const express = require('express');
+const dotenv = require('dotenv');
+dotenv.config();
+
 const mysql = require('mysql2');
 const bcrypt = require('bcryptjs');
-const dotenv = require('dotenv');
+
 const cors = require('cors');
 
-// Load environment variables
-dotenv.config();
+
 
 // Create the Express app
 const app = express();

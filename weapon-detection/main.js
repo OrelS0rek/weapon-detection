@@ -12,7 +12,7 @@ function createWindow () {
     }
   })
 
-  win.loadFile('index.html')
+  win.loadFile('client/index.html')
   
   // Add this to help diagnose issues
   win.webContents.openDevTools()
