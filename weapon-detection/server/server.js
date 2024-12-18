@@ -37,7 +37,6 @@ connection.connect((err) => {
 // Define the /register API endpoint
 app.post('/register', async (req, res) => {
   const { username, email, password } = req.body;
-
   try {
     // Hash the user's password
     const hashedPassword = await bcrypt.hash(password, 10);
@@ -59,6 +58,44 @@ app.post('/register', async (req, res) => {
     res.status(500).send('Server error.');
   }
 });
+
+// define login API endpoint
+app.post('/login', async (req, res) => {
+  const { username, password } = req.body; // Match keys sent from the client
+  
+  try {
+    // Query the database for the user by username
+    const query = 'SELECT * FROM Users WHERE username = ?';
+    connection.query(query, [username], async (err, results) => {
+      if (err) {
+        console.error('Error querying database:', err);
+        return res.status(500).send('Server error.');
+      }
+
+      // Check if user exists
+      if (results.length === 0) {
+        return res.status(400).send('Invalid username or password.');
+      }
+
+      const user = results[0];
+      
+      // Compare the provided password with the stored hash
+      const isPasswordValid = await bcrypt.compare(password, user.password_hash);
+      if (!isPasswordValid) {
+        return res.status(400).send('Invalid username or password.');
+      }
+
+      // If login is successful
+      res.status(200).send('Login successful');
+    });
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).send('Server error.');
+  }
+});
+
+
+
 
 // Start the server
 app.listen(3000, () => {

@@ -6,6 +6,7 @@ const loginPopup = document.querySelector('.login-popup');
 const popupOverlay = document.querySelector('.popup-overlay');
 const loginButton = document.querySelector('.btnLogin-popup');
 const closePopup = document.querySelector('.close-popup');
+const userPicture = document.querySelector('.user-picture');
 
 // Show popup on button click
 loginButton.addEventListener('click', () => {
@@ -62,25 +63,25 @@ async function registerUser(username, email, password) {
 }
 
 // Function to login a user
+// Function to login a user
 async function loginUser(username, password) {
     const response = await fetch('http://localhost:3000/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ username, password }), // Match server keys
     });
 
-    const data = await response.json();
+    const data = await response.text();
     if (response.ok) {
         alert('Login successful');
-        console.log('Token:', data.token);
-        //replacing the Login Button with the user picture
-        document.querySelector('btnLogin-popup').style.display = 'none';
-        document.getElementById('user-picture').style.display = 'block';
-
+        // Replace the Login Button with the user picture
+        loginButton.style.display = 'none';
+        userPicture.style.display = 'block';
     } else {
         alert(data);
     }
 }
+
 
 // Add event listeners for form submissions
 document.getElementById('registration-form').addEventListener('submit', e => {
@@ -88,10 +89,18 @@ document.getElementById('registration-form').addEventListener('submit', e => {
     const username = document.getElementById('regUsername').value;
     const email = document.getElementById('regEmail').value;
     const password = document.getElementById('regPassword').value;
+    const confpswrd = document.getElementById('regConfirmPassword').value;
     
-    registrationPopup.classList.remove('active');
-    registrationPopupOverlay.classList.remove('active');
-    registerUser(username, email, password);
+    if (confpswrd != password){
+        document.getElementById('passwords-equal').style.display = "block";
+    }
+    else {
+        document.getElementById('passwords-equal').style.display = "none";
+        registrationPopup.classList.remove('active');
+        registrationPopupOverlay.classList.remove('active');
+        registerUser(username, email, password);
+    }
+
 });
 
 document.getElementById('login-form').addEventListener('submit', e => {
@@ -103,5 +112,3 @@ document.getElementById('login-form').addEventListener('submit', e => {
     loginUser(logusername, logpassword);
 
 });
-
-

@@ -170,6 +170,15 @@ header {
     transition: background-color 0.3s ease;
 }
 
+.user-picture {
+    display: none;
+    filter: invert(1);
+    margin-left: 40px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
 .search-container {
     display: flex;
     align-items: center;

@@ -27,7 +27,7 @@
                 <a href="#">About</a>
                 <a href="#">Contact</a>
                 <button class="btnLogin-popup">Login</button>
-                <img src="assests/user-circle-solid-24.png" id="user-picture" alt="User Picture" style="display: none; width: 40px; height: 40px; border-radius: 50%;">
+                <img src="assests/user-circle-solid-24.png" class="user-picture">
             </nav>
         </header>
         <section class="landing">
@@ -76,6 +76,7 @@
             <input id="regEmail" type="text" placeholder="Enter Email" required>
             <input id="regPassword" type="password" placeholder="Create Password" required>
             <input id="regConfirmPassword" type="password" placeholder="Confirm Password" required>
+            <p id="passwords-equal" style="display: none; color: red;">passwords are not the same</p>
             <button id="createAccount"type="submit">Create Account</button>
         </form>
     </div>
