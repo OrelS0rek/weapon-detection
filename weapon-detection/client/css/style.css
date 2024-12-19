@@ -172,11 +172,31 @@ header {
 
 .user-picture {
     display: none;
-    filter: invert(1);
-    margin-left: 40px;
-    width: 40px;
-    height: 40px;
+    align-items: center;   /* Centers the content vertically */
+    justify-content: center; /* Centers the content horizontally */
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-left: 40px;
+    transition: background-color 0.3s;
+    transform: none;
+}
+
+.user-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Ensures the image fills the circle while preserving aspect ratio */
+    object-position: center;  /* Centers the image inside the container */
+}
+
+
+.user-picture:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+}
+.user-picture a::after {
+    content: none; /* This removes the line */
 }
 
 .search-container {
@@ -470,3 +490,60 @@ header {
     justify-content: center;
     align-items: center;
 }
+
+.navigation {
+    position: relative; /* This allows positioning child elements relative to the navigation bar */
+}
+
+#user-picture {
+    display: none;
+    background-color: white;  /* Set the background color to white */
+    padding: 5px;  /* Add some padding to create space around the image */
+    border-radius: 50%;  /* Make the background circular */
+    border: 2px solid #ccc;  /* Optional: Add a border around the circle */
+}
+
+
+#user-navbar {
+    display: none; /* Hidden by default */
+    position: absolute; /* Position relative to the parent .navigation */
+    top: 100%; /* Position directly below the user picture */
+    left: 100px; /* Align left with the parent container */
+    background-color: #1f1e1e;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    border-radius: 5px;
+    transform: none;
+    transition: none;
+    content: none;
+}
+
+
+
+#user-navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#user-navbar li {
+    padding: 10px 20px;
+}
+
+#user-navbar li:hover {
+    content: none;
+    background-color: #333;
+}
+#user-navbar li:hover::after {
+    content: none;
+}
+
+#user-navbar a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    display: block;
+}
+

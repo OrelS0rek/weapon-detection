@@ -1,7 +1,5 @@
 
 // Login Popup
-
-
 const loginPopup = document.querySelector('.login-popup');
 const popupOverlay = document.querySelector('.popup-overlay');
 const loginButton = document.querySelector('.btnLogin-popup');
@@ -76,7 +74,7 @@ async function loginUser(username, password) {
         alert('Login successful');
         // Replace the Login Button with the user picture
         loginButton.style.display = 'none';
-        userPicture.style.display = 'block';
+        userPicture.style.display = 'flex';
     } else {
         alert(data);
     }
@@ -93,6 +91,8 @@ document.getElementById('registration-form').addEventListener('submit', e => {
     
     if (confpswrd != password){
         document.getElementById('passwords-equal').style.display = "block";
+        document.getElementById('regPassword').style.borderColor = 'red';
+        document.getElementById('regConfirmPassword').style.borderColor = 'red';
     }
     else {
         document.getElementById('passwords-equal').style.display = "none";
@@ -112,3 +112,17 @@ document.getElementById('login-form').addEventListener('submit', e => {
     loginUser(logusername, logpassword);
 
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const userPicture = document.querySelector(".user-picture");
+    const userNavbar = document.getElementById("user-navbar");
+
+    userPicture.addEventListener("click", () => {
+        if (userNavbar.style.display === "none" || userNavbar.style.display === "") {
+            userNavbar.style.display = "block"; // Show navbar
+        } else {
+            userNavbar.style.display = "none"; // Hide navbar
+        }
+    });
+});
+
