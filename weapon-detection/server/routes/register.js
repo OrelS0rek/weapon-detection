@@ -1,5 +1,3 @@
-// routes/register.js
-
 const express = require('express');
 const bcrypt = require('bcryptjs');
 const connection = require('../db'); // Import database connection

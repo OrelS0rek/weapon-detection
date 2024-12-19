@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie-edge">
+        <title>Weapon Detector</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    </head>
+    <body>
+        <header>
+            
+            <div class="search-container">
+                <a href="#" class="home-icon">
+                    <img src="assests\home-solid-24.png" alt="Home">
+                </a>
+                <div class="search-wrapper">
+                    <div class="search-icon-wrapper">
+                        <img src="assests/search-regular-24.png" alt="Search" class="search-icon">
+                    </div>
+                    <input type="text" class="search-bar" placeholder="Search Cameras...">
+                </div>
+            </div>
+
+            <nav class="navigation">
+                <a class="about" href="#">About</a>
+                <a class="contact" href="#">Contact</a>
+                <a href="#" class="user-picture">
+                    <img src="assests/user-circle-solid-24.png" >
+                </a>
+                <div id="user-navbar">
+                    <ul>
+                        <li><a href="#profile">Profile</a></li>
+                        <li><a href="#settings">Settings</a></li>
+                        <li><a href="#projectbook">Get Project Book</a></li>
+                        <li><a href="#logout" id="LogOut">Logout</a></li>
+                    </ul>
+                </div>            
+            </nav>
+        </header>
+        <section class="landing">
+            <div class="landing-container">
+                <div class="landing-image">
+                    <img src="assests/weapon detection.jpeg" alt="Weapon Detection">
+                </div>
+                <div class="landing-content">
+                    <h1>Welcome</h1>
+                    <h2>Advanced Weapon Detection System</h2>
+                    <p>our Machine Learning and AI technology provides real-time weapon detection to enhance safety and security in various environments. Using long-short-term-memory machine learning algorithms, we offer precise and reliable threat identification.</p>
+                    <div class="landing-features">
+                        <div class="feature">
+                            <img src="assests/shield-quarter-regular-24.png" class="shield-icon">
+                            <span>Advanced AI Detection</span>
+                        </div>
+                        <div class="feature">
+                            <img src="assests/line-chart-regular-24.png" class="chart-icon">
+                            <span>Real-Time Monitoring</span>
+                        </div>
+                        <div class="feature">
+                            <img src="assests/lock-alt-regular-24.png"  class="lock-icon">
+                            <span>High Accuracy</span>
+                        </div>
+                    </div>
+                    <button class="start-detecting-btn">Start Detecting</button>
+                </div>
+            </div>
+        </section>
+        <div class="sidebar" data-collapsed="true">
+            <div class="camera-header">
+                <div class="collapse-sidebar">
+                    <img src="assests/camera-plus-solid-24.png" class="camera-icon" id="collapse-toggle" title="Toggle Sidebar">
+                    <h2>Connected Cameras</h2>
+                </div>
+                <button class="add-camera-btn">+</button>
+            </div>        
+            <ul id="camera-list">
+                <!-- Camera list will be dynamically populated -->
+            </ul>
+        </div>
+        
+
+    <script src="js/homescript.js"></script>
+</body>
+</html>
