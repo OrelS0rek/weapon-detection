@@ -1,6 +1,6 @@
 const userPicture = document.querySelector('.user-picture');
 const userNavbar = document.getElementById("user-navbar");
-
+const Profile = document.getElementById("Profile")
 
 
 
@@ -34,6 +34,15 @@ async function handleLogout() {
     }
 }
 
+async function handleProfile() {
+    window.location.href = 'profile.html';
+}
+
+Profile.addEventListener('click', e => {
+    handleProfile();
+});
+
+
 document.getElementById('LogOut').addEventListener('click', e => {
     handleLogout();
 });
@@ -46,3 +55,5 @@ document.getElementById('collapse-toggle').addEventListener('click', function ()
     // Toggle the `data-collapsed` attribute
     sidebar.setAttribute('data-collapsed', !isCollapsed);
 });
+
+

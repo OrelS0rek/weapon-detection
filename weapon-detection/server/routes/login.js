@@ -64,6 +64,8 @@ router.post('/', async (req, res) => {
               // Send the token to the client (Electron app) to store in local storage
               res.status(200).json({ message: 'Login successful', token });
               console.log('Login successful, token set');
+              const userquery = "update users set isLoggedIn=1 where username = ?"
+              connection.query(userquery, [user.username])
           } catch (bcryptError) {
               console.error('Password comparison error:', bcryptError);
               res.status(500).send('Error validating password.');
