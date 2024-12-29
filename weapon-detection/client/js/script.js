@@ -107,7 +107,7 @@ async function loginUser(username, password) {
 document.addEventListener('DOMContentLoaded', async () => {
     const isValid = await window.electronAPI.validateToken();
     if (isValid) {
-        window.location.href = '../home.html';  // Updated path
+        window.location.href = '../client/home.html';  // Updated path
     }
 });
 // Add event listeners for form submissions
